@@ -1,31 +1,50 @@
 "use strict";
-$("#btnBase2").click(function () {
+$("#txtBase2").keyup(function () {
     var txt = $("#txtBase2")
         .val()
         .toString();
+    if (txt === "")
+        txt = "0";
     setBase2(parseInt(txt, 2));
     setBase10(parseInt(txt, 2));
     setBase16(parseInt(txt, 2));
-    $("input[type='text']").val("");
 });
-$("#btnBase10").click(function () {
+$("#txtBase10").keyup(function () {
     var txt = $("#txtBase10")
         .val()
         .toString();
+    if (txt === "")
+        txt = "0";
     setBase2(parseInt(txt, 10));
     setBase10(parseInt(txt, 10));
     setBase16(parseInt(txt, 10));
-    $("input[type='text']").val("");
 });
-$("#btnBase16").click(function () {
-    console.log("*");
+$("#txtBase16").keyup(function () {
     var txt = $("#txtBase16")
         .val()
         .toString();
+    if (txt === "")
+        txt = "0";
     setBase2(parseInt(txt, 16));
     setBase10(parseInt(txt, 16));
     setBase16(parseInt(txt, 16));
-    $("input[type='text']").val("");
+});
+$("#txtAscii").keyup(function () {
+    var txt = $("#txtAscii")
+        .val()
+        .toString();
+    var n = "";
+    var b = "";
+    var h = "";
+    for (var i = 0; i < txt.length; i++) {
+        var char = txt.charCodeAt(i);
+        n += char.toString() + " ";
+        b += Convert.pad(Convert.Dec2Bin(char), 8) + " ";
+        h += Convert.pad(Convert.Dec2Hex(char), 2, " ") + " ";
+    }
+    $("#tblAscii tr:nth-child(2) td:nth-child(2)").html(b.toString());
+    $("#tblAscii tr:nth-child(3) td:nth-child(2)").html(n.toString());
+    $("#tblAscii tr:nth-child(4) td:nth-child(2)").html(h.toString().toUpperCase());
 });
 function setBase2(n) {
     var b = Convert.pad(Convert.Dec2Bin(n), 8).split("");
@@ -75,22 +94,4 @@ function setBase16(n) {
 $("#tblBase16 tr:nth-child(5) td:nth-child(2)").click(function () {
     $(".nibblehigh").toggleClass("nh");
     $(".nibblelow").toggleClass("nl");
-});
-$("#hex").click(function () {
-    $(this)
-        .closest("div")
-        .css("visibility", "hidden");
-});
-$("#dec").click(function () {
-    $(this)
-        .closest("div")
-        .hide();
-});
-$("#bin").click(function () {
-    $(this)
-        .closest("div")
-        .css("visibility", "hidden");
-});
-$("body,table").on("dblclick", function (e) {
-    $("div").css("visibility", "visible");
 });

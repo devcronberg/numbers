@@ -8,9 +8,20 @@
     <title>Numbers</title>
   </head>
   <body>
+    <div id="top">
+      <table width="100%">
+        <tr>
+          <td>
+            <h1 style="margin-bottom: -20px">Numbers</h1>
+            <br /><span style="font-size: .8em">By Michell Cronberg - for use in traning</span>
+          </td>
+          <td><button>Show binary</button> <button>Show decimal</button> <button>Show hexadecimal</button> <button>Show ascii</button></td>
+        </tr>
+      </table>
+    </div>
     <div>
       <h2 id="bin">Binary (base 2) - values = 0-1</h2>
-      <input type="text" id="txtBase2" /> <button id="btnBase2">Update</button>
+      <input type="text" id="txtBase2" placeholder="binary value" />
       <table id="tblBase2">
         <tr>
           <td>Base</td>
@@ -59,7 +70,7 @@
 
     <div>
       <h2 id="dec">Decimal (base 10) - values = 0-9</h2>
-      <input type="text" id="txtBase10" /> <button id="btnBase10">Update</button>
+      <input type="text" id="txtBase10" placeholder="decimal value" />
       <table id="tblBase10">
         <tr>
           <td>Base</td>
@@ -107,8 +118,7 @@
     </div>
     <div>
       <h2 id="hex">Hexadecimal (base 16) - values = 0-15 (0-9 + A=10, B=11, C=12, D=13, E=14, F=15)</h2>
-      <p>Value = 0-15 (0-9 + A=10, B=11, C=12, D=13, E=14, F=15)</p>
-      <input type="text" id="txtBase16" /> <button id="btnBase16">Update</button>
+      <input type="text" id="txtBase16" placeholder="hexadecimal value" />
       <table id="tblBase16">
         <tr>
           <td>Base</td>
@@ -152,6 +162,36 @@
         <tr>
           <td>Number (base 16)</td>
           <td colspan="8">0</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h2 id="ascii">ASCII (8 bit)</h2>
+      <input type="text" id="txtAscii" />
+      <table id="tblAscii">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Binary</td>
+          <td colspan="8"></td>
+        </tr>
+        <tr>
+          <td>Decimal</td>
+          <td colspan="8"></td>
+        </tr>
+        <tr>
+          <td>Hexadecimal</td>
+          <td colspan="8"></td>
         </tr>
       </table>
     </div>

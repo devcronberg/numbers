@@ -11,9 +11,10 @@ var Convert = /** @class */ (function () {
     Convert.checkHex = function (n) {
         return /^[0-9A-Fa-f]{1,64}$/.test(n);
     };
-    Convert.pad = function (s, z) {
+    Convert.pad = function (s, z, c) {
+        if (c === void 0) { c = "0"; }
         s = "" + s;
-        return s.length < z ? Convert.pad("0" + s, z) : s;
+        return s.length < z ? Convert.pad(c + s, z) : s;
     };
     Convert.unpad = function (s) {
         s = "" + s;
