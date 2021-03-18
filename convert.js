@@ -36,26 +36,26 @@ var Convert = /** @class */ (function () {
     // binary Operations
     Convert.Bin2Dec = function (n) {
         if (!Convert.checkBin(n)) {
-            return 0;
+            return "0";
         }
         return parseInt(n, 2).toString(10);
     };
     Convert.Bin2Hex = function (n) {
         if (!Convert.checkBin(n)) {
-            return 0;
+            return "0";
         }
         return parseInt(n, 2).toString(16);
     };
     // hexadecimal Operations
     Convert.Hex2Bin = function (n) {
         if (!Convert.checkHex(n)) {
-            return 0;
+            return "0";
         }
         return parseInt(n, 16).toString(2);
     };
     Convert.Hex2Dec = function (n) {
         if (!Convert.checkHex(n)) {
-            return 0;
+            return "0";
         }
         return parseInt(n, 16).toString(10);
     };
